@@ -1,6 +1,6 @@
 FROM golang:1.11
 
-RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get update && \
     apt-get install -y netcat \
                        python \
@@ -10,7 +10,6 @@ RUN apt-get update && \
                        zip \
                        wget \
                        nodejs
-RUN apt-get install -y nodejs
 RUN npm rebuild node-sass --force
 RUN pip install awscli
 RUN go get -u github.com/golang/dep/cmd/dep
